@@ -1,0 +1,14 @@
+url=http://ftp.gnu.org/gnu/glibc/glibc-2.22.tar.gz
+config_options="--disable-gcc-wrapper --disable-werror"
+
+config() {
+	mkdir ../build
+	pushd ../build
+	../glibc-2.22/configure --prefix= $config_options
+}
+
+stage() {
+	mkdir -p "$tmp"/bin
+	ln -s ../lib/libc.so "$tmp"/bin/ldd
+	ln -sf libc.so "$tmp"/lib/ld-linux-$A.so.1
+}
