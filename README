@@ -1,4 +1,4 @@
-    This is a complete, self-bootstrapping musl-based Linux system. It
+    This is a complete, self-bootstrapping glibc-based Linux system. It
 contains nothing more than Linux, Busybox, Binutils, GCC, GMP, MPFR,
 MPC, and GNU Make. I haven't attempted to minimize the configuration
 of these (yet), merely the package set. The programs get static-linked,
@@ -15,11 +15,9 @@ installed. If you don't feel like using it, you can just copy the files
 onto a filesystem of your choice and boot it.
 
 Some todos:
- * bootloader merge
+ * glibc build
    
 bootstrap-linux build prerequisites:   
- * musl-cross 
-   https://github.com/8l/musl-cross
  * genext2fs
    sudo apt-get install genext2fs
    
